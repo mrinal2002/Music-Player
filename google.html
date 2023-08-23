@@ -1,0 +1,352 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="description" content="Google built an online HTML5 game inspired by the classic arcade game Snake to welcome Chinese 2013 New Year. Not just any drawing — it is an actual game ready to play!">
+<title>Play "Snake Game" by Google - elgooG</title>
+<script src="/cdn-cgi/apps/head/JGK-iSZzO6-4eDwTbSn9A5L1zjQ.js"></script><link rel="canonical" href="https://elgoog.im/snake/">
+<link rel="apple-touch-icon" sizes="180x180" href="https://elgoog.im/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://elgoog.im/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://elgoog.im/favicon-16x16.png">
+<link rel="manifest" href="https://elgoog.im/site.webmanifest">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="theme-color" content="#ffffff">
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="fb:admins" content="1160981952" />
+<meta property="fb:app_id" content="2140740992815249" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://elgoog.im/snake/" />
+<meta property="og:title" content='Play "Snake Game" by Google - elgooG' />
+<meta property="og:image" content="https://elgoog.im/snake/google-snake.jpg" />
+<meta property="og:description" content="Google built an online HTML5 game inspired by the classic arcade game Snake to welcome Chinese 2013 New Year. Not just any drawing — it is an actual game ready to play!" />
+<link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans:wght@400;700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/ghome.css">
+<style>
+		/*html{*/
+		/*	overflow-x: hidden;*/
+		/*}*/
+		body {
+			font-family: arial,sans-serif;
+		}
+		.stage, .viewport{
+			height: 100%;
+		}
+		.hint-w{
+			display: none;
+			padding-top: 2px;
+			width: 100%;
+			height: 33px;
+		}
+		@media screen and (max-width: 768px) {
+			.hint-w {
+				display: block;
+			}
+		}
+		.hint {
+			font-family: 'Quattrocento Sans', sans-serif;
+			font-weight: bold;
+			width: 190px;
+			width: fit-content;
+			width: -moz-fit-content;
+			margin: auto;
+			font-size: 14px;
+			border-width: 1px;
+			padding: 6px 14px;
+			background-color: #f9edbe;
+			border-color: #f0c36d;
+			color: #333;
+			border-radius: 2px;
+			box-shadow: 0 2px 4px rgb(0 0 0 / 20%);
+		}
+		#hplogo {
+			height: 220px;
+			outline: none;
+			overflow: hidden;
+			position: relative;
+			width: 680px;
+			margin: 0 auto;
+			-moz-user-select: -moz-none;
+			-ms-user-select: none;
+			-webkit-user-select: none
+		}
+
+		.grids {
+			width: 460px;
+			height: 180px;
+			overflow: hidden;
+			position: absolute
+		}
+	</style>
+<script type="721bfdcc126c6d1b3ff09eda-text/javascript">
+	window._taboola = window._taboola || [];
+	_taboola.push({article:'auto'});
+	!function (e, f, u, i) {
+		if (!document.getElementById(i)){
+			e.async = 1;
+			e.src = u;
+			e.id = i;
+			f.parentNode.insertBefore(e, f);
+		}
+	}(document.createElement('script'),
+			document.getElementsByTagName('script')[0],
+			'//cdn.taboola.com/libtrc/iploc-network/loader.js',
+			'tb_loader_script');
+	if(window.performance && typeof window.performance.mark == 'function')
+	{window.performance.mark('tbl_ic');}
+
+	let currPage = window.location.pathname.split("/")[1];
+	//let currPage = window.location.pathname.split("/")[2];
+</script>
+</head>
+<body>
+<div class="menu-button">
+<input type="checkbox" id="button-check" role="button">
+<label class="menu-label" for="button-check" aria-hidden="true">
+<span class="burger">
+<span class="bar">
+<span class="visuallyhidden">Menu</span>
+</span>
+</span>
+<span class="menu-tooltip"><span>M</span><span>E</span><span>N</span><span>U</span></span>
+</label>
+<div id="menu-w" role="banner" class="is-active">
+<div class="menu-header">
+<a class="logo" href="../" title="Back to Homepage">
+<img src="https://elgoog.im/assets/img/logo.png" width="50" height="50" alt="elgoog" loading="lazy"><span>Google Mirror - I'm elgooG</span>
+</a>
+</div>
+<div class="menu-main">
+<nav id="menu-nav" role="navigation" class="is-active">
+<div class="col">
+<h4>Official Google Easter Eggs<br>- Restored</h4>
+<ul>
+<li><a href="../thanos/">Thanos Snap</a></li>
+<li><a href="../t-rex/v2/">Dinosaur Game V2</a></li>
+<li><a href="../zergrush/">Zerg Rush</a></li>
+<li><a href="../underwater/">Underwater Search</a></li>
+<li><a href="../breakout/">Atari Breakout</a></li>
+<li><a href="../zipper/">Google Zipper</a></li>
+<li><a href="../google-mirror/">Google Mirror</a></li>
+<li><a href="../let-it-snow/">Let It Snow</a></li>
+<li><a href="../wizard-of-oz/">Wizard of Oz</a></li>
+</ul>
+</div>
+<div class="col">
+<h4>Official Google Easter Eggs<br>- Enhanced</h4>
+<ul>
+<li><a href="../t-rex/">Dinosaur Game</a></li>
+<li><a href="../doabarrelroll/">Do A Barrel Roll</a></li>
+<li><a href="../snake/">Snake Game</a></li>
+<li><a href="../pacman/">Pac-Man Game</a></li>
+<li><a href="../google1998/">Google In 1998</a></li>
+<li><a href="../tilt/">Google Tilt</a></li>
+</ul>
+</div>
+<div class="col">
+<h4>Unofficial Google Easter Eggs<br>- Enjoy!</h4>
+<ul>
+<li><a href="../black/">Google Dark Mode</a></li>
+<li><a href="../2048/">2048 Game</a></li>
+<li><a href="../gravity/">Google Gravity</a></li>
+<li><a href="../space-invaders/">Space Invaders</a></li>
+<li><a href="../goooooooooooooooooogle/" class="gspring">Goooooooooooooooooogle</a></li>
+<li><a href="../əๅɓoo⅁/">əๅɓoo⅁</a></li>
+<li><a href="../search/">Search Mirror</a></li>
+<li><a href="../terminal/">Google Terminal</a></li>
+<li><a href="../t-rex/3d/">Dinosaur Game 3D</a></li>
+<li><a href="../google-fan/">Google Fan</a></li>
+</ul>
+</div>
+<div class="col">
+<h4>Official Google Easter Eggs<br>- Imperfect</h4>
+<ul>
+<li><a href="../guitar/">Google Guitar</a></li>
+<li class="social-li">
+<a href="" target="_blank" class="social-icon">
+<img src="https://elgoog.im/assets/svg/fb.svg" loading="lazy" width="32" height="32" alt="Facebook Share">
+</a>
+<a href="" target="_blank" class="social-icon">
+<img src="https://elgoog.im/assets/svg/tw.svg" loading="lazy" width="32" height="32" alt="Twitter Share">
+</a>
+</li>
+</ul>
+</div>
+<input type="button" title="Close Menu" class="close-menu" value="×">
+</nav>
+</div>
+<div class="menu-footer">
+<p class="copyright">©2011-<span id="current_year"></span> · <a target="_blank" rel="noopener" href="https://forms.gle/LnDk2zSyuGFU72146">Feedback</a> · <a target="_blank" href="../sitemap.xml">Sitemap</a> · <a target="_blank" href="../disclaimer.html">Disclaimer</a> · <a target="_blank" href="../privacy.html">Privacy</a> · Mail:contact@<span id="this_host"></span> · We are <b>NOT</b> affiliated with Google.</p>
+</div>
+</div>
+</div>
+<div class="stage">
+<div class="viewport">
+<header class="navbar">
+<ul class="nav nav-left">
+<li class="nav-item pc-navitem">
+<a class="nav-link" href="javascript:;">About</a>
+</li>
+<li class="nav-item pc-navitem">
+<a class="nav-link" href="javascript:;">Store</a>
+</li>
+</ul>
+<ul class="nav nav-block">
+<li class="nav-item mb-navitem">
+<a class="nav-link nav-active" href="javascript:;">ALL</a>
+</li>
+<li class="nav-item pc-navitem">
+<a class="nav-link" href="javascript:;">Gmail</a>
+</li>
+<li class="nav-item ">
+<a class="nav-link" href="javascript:;">Images</a>
+</li>
+</ul>
+<ul class="nav nav-right">
+<li class="nav-item">
+<a class="nav-link menu-link"><img src="https://elgoog.im/assets/svg/apps.svg" height="24" width="24" alt="Apps"></a>
+</li>
+<li class="nav-item">
+<a class="user-link" href="../thanos/"><img src="https://elgoog.im/assets/img/thanos.jpg" width="32" height="32" alt="Thanos"></a>
+</li>
+</ul>
+</header>
+<div id="tr_slot1x1"></div>
+<script type="721bfdcc126c6d1b3ff09eda-text/javascript">
+			window._taboola = window._taboola || [];
+			_taboola.push({
+				mode: 'thumbnails-1X1',
+				container: 'tr_slot1x1',
+				placement: currPage+"-300",
+				target_type: 'mix'
+			});
+		</script>
+<main class="content">
+<div class="hint-w">
+<div class="hint">For better experience, please use a Desktop Browser</div>
+</div>
+<div class="logo-main">
+<div class="main-title">
+<h1><a href="./">Google Snake Game</a></h1>
+<p>There was a Snake Game on Google homepage to celebrate the Lunar New Year of the Snake.</p>
+</div>
+<div id="hplogo" dir="ltr" tabindex="0"></div>
+<script nonce="BSVuIsyLyyouSmoVfVJuQA" type="721bfdcc126c6d1b3ff09eda-text/javascript">
+					(function() {
+								window.google || (window.google = {});
+								google.doodle || (google.doodle = {});
+								if (!google.doodle || !google.doodle.loaded) {
+									var a = ["google", "doodle", "loaded"]
+											, b = this;
+									!(a[0]in b) && b.execScript && b.execScript("var " + a[0]);
+									for (var c; a.length && (c = a.shift()); )
+										!a.length ? b[c] = !0 : b = b[c] ? b[c] : b[c] = {};
+									google.doodle.standalone = 1;
+									var d = document.createElement("script");
+									d.src = "./snakeyear13.js";
+									d.async = !0;
+									document.body.appendChild(d)
+								}
+								;
+							}
+					)();
+				</script>
+</div>
+<form class="main-form" action="/search/">
+<div class="search-wrapper">
+<div class="search">
+<div class="magnifier"><span><img src="https://elgoog.im/assets/svg/search.svg" width="24" height="24" alt="Search"></span></div>
+<div class="input">
+<input dir="right" name="q" type="text">
+</div>
+<div class="voice-wrapper">
+<div class="voice"><img src="https://elgoog.im/assets/svg/voice.svg" width="24" height="24" alt="Voice"></div>
+</div>
+</div>
+</div>
+<div class="buttons">
+<div class="button-w">
+<div class="btn">
+<input type="submit" value="Google Search">
+</div>
+<div class="btn">
+<input type="button" value="I'm Feeling Lucky">
+</div>
+</div>
+</div>
+</form>
+<div class="push">
+<div id="tr_slot468"></div>
+<script type="721bfdcc126c6d1b3ff09eda-text/javascript">
+						window._taboola = window._taboola || [];
+						_taboola.push({
+							mode: 'thumbnails-1X1stream',
+							container: 'tr_slot468',
+							placement: currPage+"-468",
+							target_type: 'mix'
+						});
+					</script>
+</div>
+</main>
+<footer class="footer">
+<div class="footer-wrapper">
+<ul class="footer-right">
+<li><a href="javascript:;">Privacy</a></li>
+<li><a href="javascript:;">Terms</a></li>
+<li><a href="javascript:;">Settings</a></li>
+</ul>
+<ul class="footer-left">
+<li><a href="javascript:;">Advertising</a></li>
+<li><a href="javascript:;">Business</a></li>
+<li><a href="javascript:;">About</a></li>
+</ul>
+</div>
+</footer>
+</div>
+</div>
+<nav class="nav-arrow">
+<div class="arrow-prev arrow">
+<span class="arrow-icon-wrap"></span>
+<div class="main-w">
+<span>Previous :
+<h3 id="title-prev"><a class="prev-link" href="/">Homepage of elgooG</a></h3>
+</span>
+<h4 id="des-prev"><a class="prev-link" href="/">Go to the homepage, all the best Google Easter Eggs out there</a></h4>
+<a class="prev-link hidden-link" href="/">Homepage of elgooG</a>
+</div>
+</div>
+<div class="arrow-next arrow">
+<span class="arrow-icon-wrap"></span>
+<div class="main-w">
+<span>Next :
+<h3 id="title-next"><a class="next-link" href="/t-rex/">Google Dinosaur Game</a></h3>
+</span>
+<h4 id="des-next"><a class="next-link" href="/t-rex/">Play Chrome's hidden T-Rex dinosaur game,with AI/Bot mode!</a></h4>
+<a class="next-link hidden-link" href="/t-rex/">Google Dinosaur Game</a>
+</div>
+</div>
+</nav>
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.11.3/dist/jquery.min.js" type="721bfdcc126c6d1b3ff09eda-text/javascript"></script>
+<script type="721bfdcc126c6d1b3ff09eda-text/javascript">window.jQuery || document.write('<script src="../assets/js/lib/jquery.min.js"><\/script>')</script>
+<script async src='https://www.google-analytics.com/analytics.js' type="721bfdcc126c6d1b3ff09eda-text/javascript"></script>
+<script async src="https://cdn.jsdelivr.net/npm/autotrack@2.4.1/autotrack.js" type="721bfdcc126c6d1b3ff09eda-text/javascript"></script>
+<script src="../assets/js/main.js" type="721bfdcc126c6d1b3ff09eda-text/javascript"></script>
+<script type="721bfdcc126c6d1b3ff09eda-text/javascript">
+	$(document).ready(
+			function(){
+				document.getElementsByClassName("logo-main")[0].addEventListener('touchmove', e => {
+					e.preventDefault();
+				}, {passive: false})
+				if (window.screen.width<680)
+					$("#hplogo").css({"transform":"scale("+(window.screen.width)/680+")","transform-origin":"left"})
+			})
+</script>
+<script type="721bfdcc126c6d1b3ff09eda-text/javascript">
+	window._taboola = window._taboola || [];
+	_taboola.push({flush: true});
+</script>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="721bfdcc126c6d1b3ff09eda-|49" defer=""></script></body>
+</html>
